@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="DBeaver" uid="org.jkiss.dbeaver.core.product" id="org.jkiss.dbeaver.core.application.product" application="org.jkiss.dbeaver.core.application.standalone" version="5.0.4" useFeatures="true" includeLaunchers="true">
+<product name="DBeaver-Special(Vincent)" uid="org.jkiss.dbeaver.core.product" id="org.jkiss.dbeaver.core.application.product" application="org.jkiss.dbeaver.core.application.standalone" version="5.0.4" useFeatures="true" includeLaunchers="true">
+
 
    <configIni use="default">
    </configIni>
@@ -11,20 +12,19 @@
       </programArgs>
       <programArgsLin>--launcher.GTK_version 2
       </programArgsLin>
-      <programArgsSol>--launcher.GTK_version 2
-      </programArgsSol>
       <vmArgs>-XX:+IgnoreUnrecognizedVMOptions --add-modules=ALL-SYSTEM -Xms64m -Xmx1024m
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread
       </vmArgsMac>
    </launcherArgs>
 
-   <splash location="org.jkiss.dbeaver.core.application"/>
+   <windowImages/>
 
+   <splash
+      location="org.jkiss.dbeaver.core.application" />
    <launcher name="dbeaver">
       <linux icon="/icons/dbeaver.xpm"/>
       <macosx icon="/icons/dbeaver.icns"/>
-      <solaris/>
       <win useIco="false">
          <bmp
             winSmallHigh="/icons/dbeaver-16x16x32.bmp"
@@ -37,23 +37,24 @@
       </win>
    </launcher>
 
+
    <vm>
    </vm>
 
    <license>
         <url>https://dbeaver.jkiss.org/about/</url>
         <text>
-    DBeaver - Universal Database Manager
+   DBeaver - Universal Database Manager
     Copyright (C) 2010-2017 Serge Rider (serge@jkiss.org)
 
-  Licensed under the Apache License, Version 2.0 (the "License");
+  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
+  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -66,6 +67,7 @@
    <features>
       <feature id="org.jkiss.dbeaver.ce.feature"/>
       <feature id="org.jkiss.dbeaver.ce.nls.feature"/>
+      <feature id="org.jkiss.dbeaver.debug.feature" version="5.0.4"/>
    </features>
 
    <configurations>
@@ -73,9 +75,14 @@
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <!-- This is important because simpleconfigurator conflicts with update.configurator -->
-      <plugin id="org.eclipse.update.configurator" autoStart="false"  startLevel="10" />
-       <!--property name="org.eclipse.update.reconcile" value="false" /-->
+      <plugin id="org.eclipse.update.configurator" autoStart="false" startLevel="10" />
    </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>
